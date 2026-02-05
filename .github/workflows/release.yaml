@@ -10,7 +10,11 @@ permissions:
   packages: write
 
 jobs:
+  test:
+    uses: ./.github/workflows/ci-checks.yaml
+
   release:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
