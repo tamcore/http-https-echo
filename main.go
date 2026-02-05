@@ -91,7 +91,7 @@ func echoHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		body = []byte{}
 	}
-	defer r.Body.Close()
+	defer func() { _ = r.Body.Close() }()
 
 	// Get OS hostname
 	osHostname, _ := os.Hostname()
