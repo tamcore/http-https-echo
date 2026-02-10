@@ -52,7 +52,7 @@ kos:
     repositories:
       - ghcr.io/tamcore/http-https-echo
     tags:
-      - "{{ .Version }}"
+      - "{{ .Tag }}"
       - "{{ .Major }}.{{ .Minor }}"
       - latest
     bare: true
